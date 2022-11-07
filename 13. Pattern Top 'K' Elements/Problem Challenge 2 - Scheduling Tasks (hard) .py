@@ -25,7 +25,6 @@ from collections import deque
 
 def schedule_tasks(tasks, k):
   intervalCount = 0
-  # TODO: Write your code here
   mapping = {}
   for i in tasks:
     mapping[i] = mapping.get(i,0) + 1
