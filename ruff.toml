@@ -1,0 +1,28 @@
+line-length = 120
+fix = true
+
+[lint]
+select = [
+    "E",  # pycodestyle errors
+    "W",  # pycodestyle warnings
+    "F",  # pyflakes
+    "I",  # isort
+    "B",  # flake8-bugbear
+    "C4",  # flake8-comprehensions
+    "UP",  # pyupgrade
+    "SIM", # flake8-simplify
+    "ASYNC", # flake8-async
+]
+#[lint.isort]
+#known-third-party = ["pydantic"]
+#known-first-party = [""]
+
+
+[lint.pydocstyle]
+convention = "google"
+
+[format]
+# Enable reformatting of code snippets in docstrings.
+docstring-code-format = true
+# Format all docstring code snippets with a line length of 120.
+docstring-code-line-length = 120
