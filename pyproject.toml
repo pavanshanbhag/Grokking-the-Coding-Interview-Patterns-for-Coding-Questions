@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "grokking-the-coding-interview-patterns-for-coding-questions"
+version = "0.1.0"
+description = "Practice Patterns for coding interviews with code in Python"
+authors = ["Pavan Shanbhag"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+jupyterlab = "^4.2.5"
+
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.6.3"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
