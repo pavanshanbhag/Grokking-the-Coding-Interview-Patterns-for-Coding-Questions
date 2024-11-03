@@ -41,7 +41,7 @@ main()
 """
 Time complexity 
 Since, in each step, the number of subsets doubles as we add each element to all the existing subsets, the time complexity of the above algorithm is O(2^N), 
-where ‘N’ is the total number of elements in the input set. This also means that, in the end, we will have a total of O(2^N) subsets.
+where 'N' is the total number of elements in the input set. This also means that, in the end, we will have a total of O(2^N) subsets.
 
 Space complexity 
 All the additional space used by our algorithm is for the output list. Since we will have a total of O(2^N) subsets, 
