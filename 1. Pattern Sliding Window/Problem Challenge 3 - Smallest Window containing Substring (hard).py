@@ -27,7 +27,7 @@ Explanation: No substring in the given string has all characters of the pattern.
 import math
 
 
-def find_substring(str, pattern):
+def find_substring(s, pattern):
     # TODO: Write your code here
     p_dict = {}
     s_dict = {}
@@ -41,35 +41,35 @@ def find_substring(str, pattern):
         else:
             p_dict[p] += 1
 
-    for win_end in range(len(str)):
-        if str[win_end] not in s_dict:
-            s_dict[str[win_end]] = 1
+    for win_end in range(len(s)):
+        if s[win_end] not in s_dict:
+            s_dict[s[win_end]] = 1
         else:
-            s_dict[str[win_end]] += 1
+            s_dict[s[win_end]] += 1
 
         print(s_dict)
 
         while set(p_dict.keys()).issubset(set(s_dict.keys())):
             if win_end - win_start + 1 < min_len:
                 min_len = win_end - win_start + 1
-                if win_end == len(str) - 1:
-                    result = str[win_start:]
+                if win_end == len(s) - 1:
+                    result = s[win_start:]
                 else:
-                    result = str[win_start : win_end + 1]
+                    result = s[win_start : win_end + 1]
 
-            if s_dict[str[win_start]] == 1:
-                del s_dict[str[win_start]]
+            if s_dict[s[win_start]] == 1:
+                del s_dict[s[win_start]]
             else:
-                s_dict[str[win_start]] -= 1
+                s_dict[s[win_start]] -= 1
             win_start += 1
 
     return result
 
 
 # answer
-def find_substring(str, pattern):
+def find_substring(s, pattern):
     window_start, matched, substr_start = 0, 0, 0
-    min_length = len(str) + 1
+    min_length = len(s) + 1
     char_frequency = {}
 
     for chr in pattern:
@@ -78,8 +78,8 @@ def find_substring(str, pattern):
         char_frequency[chr] += 1
 
     # try to extend the range [window_start, window_end]
-    for window_end in range(len(str)):
-        right_char = str[window_end]
+    for window_end in range(len(s)):
+        right_char = s[window_end]
         if right_char in char_frequency:
             char_frequency[right_char] -= 1
             if char_frequency[right_char] >= 0:  # Count every matching of a character
@@ -91,7 +91,7 @@ def find_substring(str, pattern):
                 min_length = window_end - window_start + 1
                 substr_start = window_start
 
-            left_char = str[window_start]
+            left_char = s[window_start]
             window_start += 1
             if left_char in char_frequency:
                 # Note that we could have redundant matching characters, therefore we'll decrement the
@@ -100,7 +100,7 @@ def find_substring(str, pattern):
                     matched -= 1
                 char_frequency[left_char] += 1
 
-    if min_length > len(str):
+    if min_length > len(s):
         return ""
     return str[substr_start : substr_start + min_length]
 
@@ -115,10 +115,10 @@ main()
 
 
 """
-Time Complexity 
-The time complexity of the above algorithm will be O(N + M) where ‘N’ and ‘M’ are the number of characters in the input string and the pattern respectively.
+Time Complexity
+The time complexity of the above algorithm will be O(N + M) where 'N' and 'M' are the number of characters in the input string and the pattern respectively.
 
-Space Complexity 
+Space Complexity
 The space complexity of the algorithm is O(M) since in the worst case, the whole pattern can have distinct characters which will go into the HashMap. 
 In the worst case, we also need O(N) space for the resulting substring, which will happen when the input string is a permutation of the pattern.
 """

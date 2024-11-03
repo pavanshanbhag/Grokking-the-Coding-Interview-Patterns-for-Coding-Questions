@@ -1,6 +1,7 @@
 """
 Problem Statement
-Given an array containing 0s and 1s, if you are allowed to replace no more than 'k' 0s with 1s, find the length of the longest contiguous subarray having all 1s.
+Given an array containing 0s and 1s, if you are allowed to replace no more than 'k' 0s with 1s, find the length of the
+longest contiguous subarray having all 1s.
 
 Example 1:
 
@@ -68,15 +69,16 @@ main()
 
 
 """
-Time Complexity 
-The time complexity of the above algorithm will be O(N) where ‘N’ is the count of numbers in the input array.
+Time Complexity
+The time complexity of the above algorithm will be O(N) where 'N' is the count of numbers in the input array.
 
-Space Complexity 
+Space Complexity
 The algorithm runs in constant space O(1).
 
 Edge cases:
 
-When k is greater than or equal to the number of 0s in the array, the length of the longest subarray of 1s will be equal to the length of the array.
+When k is greater than or equal to the number of 0s in the array, the length of the longest subarray of 1s 
+will be equal to the length of the array.
 When the array has all 1s, the length of the longest subarray of 1s will be equal to the length of the array.
 When the array has all 0s, the length of the longest subarray of 1s will be 0.
 When k is 0, the length of the longest subarray of 1s will be the maximum number of consecutive 1s in the array.

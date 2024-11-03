@@ -1,6 +1,6 @@
 """
 Problem Statement #
-Given an array of positive numbers and a positive number ‘k’, find the maximum sum of any contiguous subarray of size ‘k’.
+Given an array of positive numbers and a positive number 'k', find the maximum sum of any contiguous subarray of size 'k'.
 
 Example 1:
 
@@ -16,25 +16,9 @@ Explanation: Subarray with maximum sum is [3, 4].
 """
 
 
-# mycode
-def max_sub_array_of_size_k(k, arr):
-    # TODO: Write your code here
-    max_sum, window_sum = 0, 0
-    window_start = 0
-
-    for window_end in range(len(arr)):
-        window_sum += arr[window_end]  # add the next element
-        # slide the window, we don't need to slide if we've not hit the required window size of 'k'
-        if window_end >= k - 1:
-            max_sum = max(max_sum, window_sum)
-            window_sum -= arr[window_start]  # subtract the element going out
-            window_start += 1  # slide the window ahead
-    return max_sum
-
-
 # answer
 def max_sub_array_of_size_k(k, arr):
-    max_sum, window_sum = 0, 0
+    max_sum, window_sum = 0, 0  # alternatively max_sum = float("-inf") to handle negative numbers
     window_start = 0
 
     for window_end in range(len(arr)):
@@ -56,10 +40,10 @@ main()
 
 
 """
-Time Complexity 
+Time Complexity
 The time complexity of the above algorithm will be O(N).
 
-Space Complexity 
+Space Complexity
 The algorithm runs in constant space O(1).
 
 # Edge Case 1: empty array
