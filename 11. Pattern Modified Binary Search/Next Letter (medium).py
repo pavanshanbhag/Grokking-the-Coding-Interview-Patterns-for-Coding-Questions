@@ -8,7 +8,7 @@ letter.
 This also means that the smallest letter in the given array is greater than the last letter of the array and is also the
 first letter of the array.
 
-Write a function to return the next letter of the given '‘'key'.
+Write a function to return the next letter of the given '''key'.
 
 Example 1:
 
@@ -94,7 +94,7 @@ main()
 Time complexity 
 Since, we are reducing the search range by half at every step, 
 this means that the time complexity of our algorithm will be O(logN)O 
-where ‘N' is the total elements in the given array.
+where 'N' is the total elements in the given array.
 
 Space complexity 
 The algorithm runs in constant space O(1).

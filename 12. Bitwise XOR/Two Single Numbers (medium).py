@@ -1,5 +1,5 @@
-'''
-Problem Statement 
+"""
+Problem Statement
 In a non-empty array of numbers, every number appears exactly twice except two numbers that appear only once. Find the two numbers that appear only once.
 
 Example 1:
@@ -10,47 +10,46 @@ Example 2:
 
 Input: [2, 1, 3, 2]
 Output: [1, 3]
-'''
+"""
 
-#mycode
+
+# mycode
 def find_single_numbers(nums):
-  # TODO: Write your code here
-  sum = 0
-  for num in nums:
-    sum ^= num
-  
-  diff = 1
-  while (diff & sum == 0):
-    diff = diff << 1
-  
-  num1, num2 = 0, 0
+    # TODO: Write your code here
+    sum = 0
+    for num in nums:
+        sum ^= num
 
-  for num in nums:
-    if num & diff ==0:
-      num1 ^= num
-    else:
-      num2 ^= num
+    diff = 1
+    while diff & sum == 0:
+        diff = diff << 1
 
+    num1, num2 = 0, 0
 
-  return [num1, num2]
+    for num in nums:
+        if num & diff == 0:
+            num1 ^= num
+        else:
+            num2 ^= num
+
+    return [num1, num2]
 
 
 def main():
-  print('Single numbers are:' +
-        str(find_single_numbers([1, 4, 2, 1, 3, 5, 6, 2, 3, 5])))
-  print('Single numbers are:' + str(find_single_numbers([2, 1, 3, 2])))
+    print("Single numbers are:" + str(find_single_numbers([1, 4, 2, 1, 3, 5, 6, 2, 3, 5])))
+    print("Single numbers are:" + str(find_single_numbers([2, 1, 3, 2])))
+
 
 main()
 
 
-'''
+"""
 First for loop is to find num1 ^ num2. The first right one of num1^num2 marks the difference of the two numbers,
 and the third loop is to divide the array into two sets and find the single number respectively.
-'''
+"""
 
 
-
-#answer
+# answer
 def find_single_numbers(nums):
     # get the XOR of the all the numbers
     n1xn2 = 0
@@ -73,19 +72,17 @@ def find_single_numbers(nums):
 
 
 def main():
-    print('Single numbers are:' +
-          str(find_single_numbers([1, 4, 2, 1, 3, 5, 6, 2, 3, 5])))
-    print('Single numbers are:' + str(find_single_numbers([2, 1, 3, 2])))
+    print("Single numbers are:" + str(find_single_numbers([1, 4, 2, 1, 3, 5, 6, 2, 3, 5])))
+    print("Single numbers are:" + str(find_single_numbers([2, 1, 3, 2])))
 
 
 main()
 
 
-
-'''
+"""
 Time Complexity 
-The time complexity of this solution is O(n) where ‘n’ is the number of elements in the input array.
+The time complexity of this solution is O(n) where 'n' is the number of elements in the input array.
 
 Space Complexity 
 The algorithm runs in constant space O(1).
-'''
+"""

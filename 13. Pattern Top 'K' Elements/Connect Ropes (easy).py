@@ -1,6 +1,6 @@
 '''
 Problem Statement 
-Given ‘N’ ropes with different lengths, we need to connect these ropes into one big rope with minimum cost. 
+Given 'N' ropes with different lengths, we need to connect these ropes into one big rope with minimum cost. 
 The cost of connecting two ropes is equal to the sum of their lengths.
 
 Example 1:
@@ -23,6 +23,7 @@ Explanation: First connect 1+2(=3), then 3+3(=6), 6+5(=11), 11+11(=22). Total co
 
 #mycode
 from heapq import *
+
 
 def minimum_cost_to_connect_ropes(ropeLengths):
   result = []
@@ -90,9 +91,9 @@ main()
 
 '''
 Time complexity 
-Given ‘N’ ropes, we need O(N*logN)to insert all the ropes in the heap. 
+Given 'N' ropes, we need O(N*logN)to insert all the ropes in the heap. 
 In each step, while processing the heap, we take out two elements from the heap and insert one. 
-This means we will have a total of ‘N’ steps, having a total time complexity of O(N*logN).
+This means we will have a total of 'N' steps, having a total time complexity of O(N*logN).
 
 Space complexity #
 The space complexity will be O(N) because we need to store all the ropes in the heap.

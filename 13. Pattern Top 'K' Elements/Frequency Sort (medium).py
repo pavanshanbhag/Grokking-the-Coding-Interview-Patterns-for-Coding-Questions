@@ -18,6 +18,7 @@ Explanation: 'b' appeared three times, 'a' appeared twice, and 'c' appeared only
 #mycode
 from heapq import *
 
+
 def sort_character_by_frequency(str):
   # TODO: Write your code here
   mapping= {}
@@ -86,10 +87,10 @@ main()
 
 '''
 Time complexity 
-The time complexity of the above algorithm is O(D*logD) where ‘D’ is the number of distinct characters in the input string. 
+The time complexity of the above algorithm is O(D*logD) where 'D' is the number of distinct characters in the input string. 
 This means, in the worst case, when all characters are unique the time complexity of the algorithm will be O(N*logN) 
-where ‘N’ is the total number of characters in the string.
+where 'N' is the total number of characters in the string.
 
 Space complexity 
-The space complexity will be O(N), as in the worst case, we need to store all the ‘N’ characters in the HashMap.
+The space complexity will be O(N), as in the worst case, we need to store all the 'N' characters in the HashMap.
 '''

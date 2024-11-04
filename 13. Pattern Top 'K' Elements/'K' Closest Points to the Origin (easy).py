@@ -1,6 +1,6 @@
 '''
 Problem Statement 
-Given an array of points in the a 2D2D plane, find ‘K’ closest points to the origin.
+Given an array of points in the a 2D2D plane, find 'K' closest points to the origin.
 
 Example 1:
 
@@ -17,6 +17,7 @@ Output: [[1, 3], [2, -1]]
 
 import math
 from heapq import *
+
 
 class Point:
 
@@ -59,6 +60,7 @@ main()
 
 #answer
 from __future__ import print_function
+
 from heapq import *
 
 
@@ -114,5 +116,5 @@ Time complexity
 The time complexity of this algorithm is (N*logK) as we iterating all points and pushing them into the heap.
 
 Space complexity 
-The space complexity will be O(K) because we need to store ‘K’ point in the heap.
+The space complexity will be O(K) because we need to store 'K' point in the heap.
 '''
