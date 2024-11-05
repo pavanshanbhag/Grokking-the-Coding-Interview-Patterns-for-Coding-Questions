@@ -7,6 +7,7 @@ The last node of each level should point to a null node.
 
 #mycode
 from __future__ import print_function
+
 from collections import deque
 
 
@@ -79,6 +80,7 @@ main()
 
 #answer
 from __future__ import print_function
+
 from collections import deque
 
 
@@ -146,7 +148,7 @@ main()
 
 '''
 Time complexity 
-The time complexity of the above algorithm is O(N)O, where ‘N’ is the total number of nodes in the tree. 
+The time complexity of the above algorithm is O(N)O, where 'N' is the total number of nodes in the tree. 
 This is due to the fact that we traverse each node once.
 
 Space complexity 

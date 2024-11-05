@@ -18,7 +18,7 @@ def traverse(root):
     result = []
     if root is None:
         return result
-
+    # deque is used here for efficient O(1) append and popleft operations
     queue = deque()
     queue.append(root)
     while queue:
@@ -52,37 +52,16 @@ def main():
 main()
 
 
-# ps alternative without deque
-def level_order_traversal(root):
-    if not root:
-        return []
-    result = []
-    queue = [root]
-    while queue:
-        level_size = len(queue)
-        current_level = []
-
-        for _ in range(level_size):
-            node = queue.pop(0)
-            current_level.append(node.val)
-            if node.left:
-                queue.append(node.left)
-            if node.right:
-                queue.append(node.right)
-
-        result.append(current_level)
-
-    return result
-
-
 """
-Time complexity 
-The time complexity of the above algorithm is O(N), where ‘N’ is the total number of nodes in the tree. 
+Time complexity
+The time complexity of the above algorithm is O(N), where 'N' is the total number of nodes in the tree.
 This is due to the fact that we traverse each node once.
 
-Space complexity 
-The space complexity of the above algorithm will be O(N) as we need to return a list containing the level order traversal. 
-We will also need O(N) space for the queue. Since we can have a maximum of N/2 nodes at any level (this could happen only at the lowest level), 
+Space complexity
+The space complexity of the above algorithm will be O(N) as we need to return a list containing
+the level order traversal.
+We will also need O(N) space for the queue. Since we can have a maximum of N/2 nodes at any level
+(this could happen only at the lowest level),
 therefore we will need O(N) space to store them in the queue.
 
 
