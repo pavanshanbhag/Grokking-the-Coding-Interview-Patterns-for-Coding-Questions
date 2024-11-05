@@ -80,7 +80,7 @@ input string and the pattern respectively.
 
 Space Complexity
 The space complexity of the algorithm is O(M) since in the worst case, the whole pattern can have distinct character
-which will go into the HashMap. 
+which will go into the HashMap.
 In the worst case, we also need O(N) space for the resulting substring, which will happen when the input string is
 permutation of the pattern.
 """
@@ -111,10 +111,7 @@ def find_substring_trial(s, pattern):
         while set(p_dict.keys()).issubset(set(s_dict.keys())):
             if win_end - win_start + 1 < min_len:
                 min_len = win_end - win_start + 1
-                if win_end == len(s) - 1:
-                    result = s[win_start:]
-                else:
-                    result = s[win_start : win_end + 1]
+                result = s[win_start:] if win_end == len(s) - 1 else s[win_start : win_end + 1]
 
             if s_dict[s[win_start]] == 1:
                 del s_dict[s[win_start]]
