@@ -22,29 +22,6 @@ Explanation: Longest substrings without any repeating characters are "abc" & "cd
 """
 
 
-# mycode
-def non_repeat_substring(s):
-    max_len, win_start = 0, 0
-    dict_str = {}
-
-    for win_end in range(len(s)):
-        if s[win_end] not in dict_str:
-            dict_str[s[win_end]] = 1
-        else:
-            dict_str[s[win_end]] += 1
-
-        while len(dict_str) < sum(dict_str.values()):
-            if dict_str[s[win_start]] == 1:
-                del dict_str[s[win_start]]
-            else:
-                dict_str[s[win_start]] -= 1
-            win_start += 1
-
-        if len(dict_str) == sum(dict_str.values()):
-            max_len = max(max_len, len(dict_str))
-    return max_len
-
-
 # answer
 def non_repeat_substring(s):
     window_start = 0
@@ -81,7 +58,10 @@ Time Complexity
 The time complexity of the above algorithm will be O(N) where 'N' is the number of characters in the input string.
 
 Space Complexity
-The space complexity of the algorithm will be O(K) where KK is the number of distinct characters in the input string. 
-This also means K<=N, because in the worst case, the whole string might not have any repeating character so the entire string will be added to the HashMap. 
-Having said that, since we can expect a fixed set of characters in the input string (e.g., 26 for English letters), we can say that the algorithm runs in fixed space O(1); in this case, we can use a fixed-size array instead of the HashMap.
+The space complexity of the algorithm will be O(K) where KK is the number of distinct characters in the input string.
+This also means K<=N, because in the worst case, the whole string might not have any repeating character so the entire
+string will be added to the HashMap.
+Having said that, since we can expect a fixed set of characters in the input string (e.g., 26 for English letters),
+we can say that the algorithm runs in fixed space O(1); in this case, we can use a fixed-size array instead of the
+HashMap.
 """

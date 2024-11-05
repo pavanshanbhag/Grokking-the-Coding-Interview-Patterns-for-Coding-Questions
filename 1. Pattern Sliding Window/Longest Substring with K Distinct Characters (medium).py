@@ -45,6 +45,7 @@ def longest_substring_with_k_distinct(s, k):
 
         # remember the maximum length so far
         max_length = max(max_length, window_end - window_start + 1)
+
     return max_length
 
 
@@ -60,7 +61,7 @@ main()
 """
 Time Complexity
 The time complexity of the above algorithm will be O(N) where 'N' is the number of characters in the input string.
-The outer for loop runs for all characters and the inner while loop processes each character only once, therefore the 
+The outer for loop runs for all characters and the inner while loop processes each character only once, therefore the
 time complexity of the algorithm will be O(N+N) which is asymptotically equivalent to O(N).
 
 Space Complexity

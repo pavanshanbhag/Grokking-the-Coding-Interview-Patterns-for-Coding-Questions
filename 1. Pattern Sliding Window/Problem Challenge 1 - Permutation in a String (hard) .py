@@ -4,7 +4,8 @@ Problem Challenge 1
 Permutation in a String (hard)
 Given a string and a pattern, find out if the string contains any permutation of the pattern.
 
-Permutation is defined as the re-arranging of the characters of the string. For example, “abc” has the following six permutations:
+Permutation is defined as the re-arranging of the characters of the string. For example, “abc” has the following
+six permutations:
 
 abc
 acb
@@ -38,41 +39,6 @@ Input: String="aaacb", Pattern="abc"
 Output: true
 Explanation: The string contains "acb" which is a permutation of the given pattern.
 """
-
-# mycode
-
-
-def find_permutation(str, pattern):
-    # TODO: Write your code here
-    p_dict = {}
-    s_dict = {}
-    for p in pattern:
-        if p not in p_dict:
-            p_dict[p] = 1
-        else:
-            p_dict[p] += 1
-
-    for s in range(len(str)):
-        if s < len(pattern):
-            if str[s] not in s_dict:
-                s_dict[str[s]] = 1
-            else:
-                s_dict[str[s]] += 1
-
-        else:
-            if s_dict[str[s - len(pattern)]] == 1:
-                del s_dict[str[s - len(pattern)]]
-            else:
-                s_dict[str[s - len(pattern)]] -= 1
-
-            if str[s] not in s_dict:
-                s_dict[str[s]] = 1
-            else:
-                s_dict[str[s]] += 1
-
-        if s_dict == p_dict:
-            return True
-    return False
 
 
 # answer
@@ -129,3 +95,36 @@ Space Complexity #
 The space complexity of the algorithm is O(M) since in the worst case,
 the whole pattern can have distinct characters which will go into the HashMap.
 """
+
+
+# mycode
+def find_permutation_trial(str, pattern):
+    p_dict = {}
+    s_dict = {}
+    for p in pattern:
+        if p not in p_dict:
+            p_dict[p] = 1
+        else:
+            p_dict[p] += 1
+
+    for s in range(len(str)):
+        if s < len(pattern):
+            if str[s] not in s_dict:
+                s_dict[str[s]] = 1
+            else:
+                s_dict[str[s]] += 1
+
+        else:
+            if s_dict[str[s - len(pattern)]] == 1:
+                del s_dict[str[s - len(pattern)]]
+            else:
+                s_dict[str[s - len(pattern)]] -= 1
+
+            if str[s] not in s_dict:
+                s_dict[str[s]] = 1
+            else:
+                s_dict[str[s]] += 1
+
+        if s_dict == p_dict:
+            return True
+    return False

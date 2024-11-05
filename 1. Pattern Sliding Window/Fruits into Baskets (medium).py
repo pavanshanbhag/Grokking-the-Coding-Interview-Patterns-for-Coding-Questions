@@ -1,8 +1,10 @@
 """
 Problem Statement
-Given an array of characters where each character represents a fruit tree, you are given two baskets and your goal is to put maximum number of fruits in each basket. The only restriction is that each basket can have only one type of fruit.
+Given an array of characters where each character represents a fruit tree, you are given two baskets and your goal is
+to put maximum number of fruits in each basket. The only restriction is that each basket can have only one type of fruit
 
-You can start with any tree, but once you have started you can't skip a tree. You will pick one fruit from each tree until you cannot, i.e., you will stop when you have to pick from a third fruit type.
+You can start with any tree, but once you have started you can't skip a tree. You will pick one fruit from each tree
+until you cannot, i.e., you will stop when you have to pick from a third fruit type.
 
 Write a function to return the maximum number of fruits in both the baskets.
 
@@ -19,30 +21,6 @@ Output: 5
 Explanation: We can put 3 'B' in one basket and two 'C' in the other basket.
 This can be done if we start with the second letter: ['B', 'C', 'B', 'B', 'C']
 """
-
-
-# mycode
-def fruits_into_baskets(fruits):
-    max_len, win_start = 0, 0
-    dict_fruits = {}
-
-    for win_end in range(len(fruits)):
-        if fruits[win_end] not in dict_fruits:
-            dict_fruits[fruits[win_end]] = 1
-        else:
-            dict_fruits[fruits[win_end]] += 1
-
-        while len(dict_fruits) > 2:
-            if dict_fruits[fruits[win_start]] == 1:
-                del dict_fruits[fruits[win_start]]
-            else:
-                dict_fruits[fruits[win_start]] -= 1
-            win_start += 1
-
-        if len(dict_fruits) == 2:
-            max_len = max(max_len, sum(dict_fruits.values()))
-
-    return max_len
 
 
 # answer
@@ -93,3 +71,29 @@ Given a string, find the length of the longest substring in it with at most two 
 
 Solution: This problem is exactly similar to our parent problem.
 """
+
+
+# mycode
+def fruits_into_baskets_trial(fruits):
+    max_len, win_start = 0, 0
+    dict_fruits = {}
+
+    # try to extend the range [window_start, window_end]
+    for win_end in range(len(fruits)):
+        if fruits[win_end] not in dict_fruits:
+            dict_fruits[fruits[win_end]] = 1
+        else:
+            dict_fruits[fruits[win_end]] += 1
+
+        # shrink the sliding window, until we are left with '2' fruits in the fruit frequency dictionary
+        while len(dict_fruits) > 2:
+            if dict_fruits[fruits[win_start]] == 1:
+                del dict_fruits[fruits[win_start]]
+            else:
+                dict_fruits[fruits[win_start]] -= 1
+            win_start += 1  # shrink the window
+
+        if len(dict_fruits) == 2:
+            max_len = max(max_len, sum(dict_fruits.values()))
+
+    return max_len

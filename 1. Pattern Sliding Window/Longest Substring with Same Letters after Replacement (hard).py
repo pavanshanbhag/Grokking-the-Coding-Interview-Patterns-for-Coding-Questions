@@ -23,36 +23,14 @@ Explanation: Replace the 'b' or 'd' with 'c' to have the longest repeating subst
 """
 
 
-# mycode
-def length_of_longest_substring(str, k):
-    # TODO: Write your code here
-    win_start, max_len, cnt = 0, 0, 0
-    dict_str = {}
-
-    for win_end in range(len(str)):
-        if str[win_end] not in dict_str:
-            dict_str[str[win_end]] = 1
-        else:
-            dict_str[str[win_end]] += 1
-
-        cnt = max(dict_str.values())
-        while win_end - win_start + 1 - cnt > k:
-            dict_str[str[win_start]] -= 1
-            win_start += 1
-
-        max_len = max(max_len, win_end - win_start + 1)
-
-    return max_len
-
-
 # answer
-def length_of_longest_substring(str, k):
+def length_of_longest_substring(s, k):
     window_start, max_length, max_repeat_letter_count = 0, 0, 0
     frequency_map = {}
 
     # Try to extend the range [window_start, window_end]
-    for window_end in range(len(str)):
-        right_char = str[window_end]
+    for window_end in range(len(s)):
+        right_char = s[window_end]
         if right_char not in frequency_map:
             frequency_map[right_char] = 0
         frequency_map[right_char] += 1
@@ -64,7 +42,7 @@ def length_of_longest_substring(str, k):
         # if the remaining letters are more than 'k', it is the time to shrink the window as we
         # are not allowed to replace more than 'k' letters
         if (window_end - window_start + 1 - max_repeat_letter_count) > k:
-            left_char = str[window_start]
+            left_char = s[window_start]
             frequency_map[left_char] -= 1
             window_start += 1
 
@@ -91,3 +69,24 @@ O(26), to store each letter's frequency in the HashMap, which is asymptotically 
 
 
 """
+
+
+# mycode
+def length_of_longest_substring_trial(str, k):
+    win_start, max_len, cnt = 0, 0, 0
+    dict_str = {}
+
+    for win_end in range(len(str)):
+        if str[win_end] not in dict_str:
+            dict_str[str[win_end]] = 1
+        else:
+            dict_str[str[win_end]] += 1
+
+        cnt = max(dict_str.values())
+        while win_end - win_start + 1 - cnt > k:
+            dict_str[str[win_start]] -= 1
+            win_start += 1
+
+        max_len = max(max_len, win_end - win_start + 1)
+
+    return max_len

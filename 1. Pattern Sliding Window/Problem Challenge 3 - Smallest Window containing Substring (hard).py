@@ -2,7 +2,8 @@
 Problem Challenge 3
 
 Smallest Window containing Substring (hard)
-Given a string and a pattern, find the smallest substring in the given string which has all the characters of the given pattern.
+Given a string and a pattern, find the smallest substring in the given string which has all
+the characters of the given pattern.
 
 Example 1:
 
@@ -22,48 +23,6 @@ Input: String="adcad", Pattern="abc"
 Output: ""
 Explanation: No substring in the given string has all characters of the pattern.
 """
-
-# mycode
-import math
-
-
-def find_substring(s, pattern):
-    # TODO: Write your code here
-    p_dict = {}
-    s_dict = {}
-    result = ""
-
-    win_start, min_len = 0, math.inf
-
-    for p in pattern:
-        if p not in p_dict:
-            p_dict[p] = 1
-        else:
-            p_dict[p] += 1
-
-    for win_end in range(len(s)):
-        if s[win_end] not in s_dict:
-            s_dict[s[win_end]] = 1
-        else:
-            s_dict[s[win_end]] += 1
-
-        print(s_dict)
-
-        while set(p_dict.keys()).issubset(set(s_dict.keys())):
-            if win_end - win_start + 1 < min_len:
-                min_len = win_end - win_start + 1
-                if win_end == len(s) - 1:
-                    result = s[win_start:]
-                else:
-                    result = s[win_start : win_end + 1]
-
-            if s_dict[s[win_start]] == 1:
-                del s_dict[s[win_start]]
-            else:
-                s_dict[s[win_start]] -= 1
-            win_start += 1
-
-    return result
 
 
 # answer
@@ -116,9 +75,51 @@ main()
 
 """
 Time Complexity
-The time complexity of the above algorithm will be O(N + M) where 'N' and 'M' are the number of characters in the input string and the pattern respectively.
+The time complexity of the above algorithm will be O(N + M) where 'N' and 'M' are the number of characters in the
+input string and the pattern respectively.
 
 Space Complexity
-The space complexity of the algorithm is O(M) since in the worst case, the whole pattern can have distinct characters which will go into the HashMap. 
-In the worst case, we also need O(N) space for the resulting substring, which will happen when the input string is a permutation of the pattern.
+The space complexity of the algorithm is O(M) since in the worst case, the whole pattern can have distinct character
+which will go into the HashMap. 
+In the worst case, we also need O(N) space for the resulting substring, which will happen when the input string is
+permutation of the pattern.
 """
+
+
+# mycode - wrong
+def find_substring_trial(s, pattern):
+    p_dict = {}
+    s_dict = {}
+    result = ""
+
+    win_start, min_len = 0, float("inf")
+
+    for p in pattern:
+        if p not in p_dict:
+            p_dict[p] = 1
+        else:
+            p_dict[p] += 1
+
+    for win_end in range(len(s)):
+        if s[win_end] not in s_dict:
+            s_dict[s[win_end]] = 1
+        else:
+            s_dict[s[win_end]] += 1
+
+        print(s_dict)
+
+        while set(p_dict.keys()).issubset(set(s_dict.keys())):
+            if win_end - win_start + 1 < min_len:
+                min_len = win_end - win_start + 1
+                if win_end == len(s) - 1:
+                    result = s[win_start:]
+                else:
+                    result = s[win_start : win_end + 1]
+
+            if s_dict[s[win_start]] == 1:
+                del s_dict[s[win_start]]
+            else:
+                s_dict[s[win_start]] -= 1
+            win_start += 1
+
+    return result

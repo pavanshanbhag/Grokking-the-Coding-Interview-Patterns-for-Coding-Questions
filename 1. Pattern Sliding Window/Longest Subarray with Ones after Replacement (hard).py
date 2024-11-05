@@ -17,29 +17,10 @@ Explanation: Replace the '0' at index 6, 9, and 10 to have the longest contiguou
 """
 
 
-# mycode
-def length_of_longest_substring(arr, k):
-    win_start, max_len, cnt = 0, 0, 0
-    zero_posi = [0] * (k + 1)
-
-    for win_end in range(len(arr)):
-        if arr[win_end] == 0:
-            cnt += 1
-            zero_posi[cnt - 1] = win_end
-
-            if cnt > k:
-                win_start = zero_posi[0] + 1
-                zero_posi = zero_posi[1:] + [0]
-                cnt -= 1
-
-        max_len = max(max_len, win_end - win_start + 1)
-
-    return max_len
-
-
 # answer
-def length_of_longest_substring_ans(arr, k):
+def length_of_longest_substring(arr, k):
     window_start, max_length, max_ones_count = 0, 0, 0
+
     # Try to extend the range [window_start, window_end]
     for window_end in range(len(arr)):
         if arr[window_end] == 1:
@@ -62,7 +43,7 @@ def length_of_longest_substring_ans(arr, k):
 def main():
     print(length_of_longest_substring([0, 1, 1, 0, 0, 0, 1, 1, 0, 1, 1], 2))
     print(length_of_longest_substring([0, 1, 0, 0, 1, 1, 0, 1, 1, 0, 0, 1, 1], 3))
-    print(length_of_longest_substring_ans([0, 1, 0, 0, 1, 1, 0, 1, 1, 0, 0, 1, 1], 3))
+    print(length_of_longest_substring([0, 1, 0, 0, 1, 1, 0, 1, 1, 0, 0, 1, 1], 3))
 
 
 main()
@@ -77,7 +58,7 @@ The algorithm runs in constant space O(1).
 
 Edge cases:
 
-When k is greater than or equal to the number of 0s in the array, the length of the longest subarray of 1s 
+When k is greater than or equal to the number of 0s in the array, the length of the longest subarray of 1s
 will be equal to the length of the array.
 When the array has all 1s, the length of the longest subarray of 1s will be equal to the length of the array.
 When the array has all 0s, the length of the longest subarray of 1s will be 0.
