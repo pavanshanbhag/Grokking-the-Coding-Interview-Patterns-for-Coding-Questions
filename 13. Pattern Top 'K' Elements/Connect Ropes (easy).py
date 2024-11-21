@@ -1,6 +1,6 @@
-'''
-Problem Statement 
-Given 'N' ropes with different lengths, we need to connect these ropes into one big rope with minimum cost. 
+"""
+Problem Statement
+Given 'N' ropes with different lengths, we need to connect these ropes into one big rope with minimum cost.
 The cost of connecting two ropes is equal to the sum of their lengths.
 
 Example 1:
@@ -18,83 +18,72 @@ Example 3:
 Input: [1, 3, 11, 5, 2]
 Output: 42
 Explanation: First connect 1+2(=3), then 3+3(=6), 6+5(=11), 11+11(=22). Total cost is 42 (3+6+11+22)
-'''
+"""
 
-
-#mycode
+# mycode
 from heapq import *
 
 
 def minimum_cost_to_connect_ropes(ropeLengths):
-  result = []
-  # TODO: Write your code here
-  for i in ropeLengths:
-    heappush(result,i)
-  
-  lenghth = 0
-  while len(result)>1:
-    temp = heappop(result) + heappop(result)
-    lenghth += temp
-    heappush(result,temp)
-  return lenghth
+    result = []
+    # TODO: Write your code here
+    for i in ropeLengths:
+        heappush(result, i)
+
+    lenghth = 0
+    while len(result) > 1:
+        temp = heappop(result) + heappop(result)
+        lenghth += temp
+        heappush(result, temp)
+    return lenghth
 
 
 def main():
-
-  print("Minimum cost to connect ropes: " +
-          str(minimum_cost_to_connect_ropes([1, 3, 11, 5])))
-  print("Minimum cost to connect ropes: " +
-        str(minimum_cost_to_connect_ropes([3, 4, 5, 6])))
-  print("Minimum cost to connect ropes: " +
-        str(minimum_cost_to_connect_ropes([1, 3, 11, 5, 2])))
+    print("Minimum cost to connect ropes: " + str(minimum_cost_to_connect_ropes([1, 3, 11, 5])))
+    print("Minimum cost to connect ropes: " + str(minimum_cost_to_connect_ropes([3, 4, 5, 6])))
+    print("Minimum cost to connect ropes: " + str(minimum_cost_to_connect_ropes([1, 3, 11, 5, 2])))
 
 
 main()
 
 
-
-#answer
+# answer
 from heapq import *
 
 
 def minimum_cost_to_connect_ropes(ropeLengths):
-  minHeap = []
-  # add all ropes to the min heap
-  for i in ropeLengths:
-    heappush(minHeap, i)
+    minHeap = []
+    # add all ropes to the min heap
+    for i in ropeLengths:
+        heappush(minHeap, i)
 
-  # go through the values of the heap, in each step take top (lowest) rope lengths from the min heap
-  # connect them and push the result back to the min heap.
-  # keep doing this until the heap is left with only one rope
-  result, temp = 0, 0
-  while len(minHeap) > 1:
-    temp = heappop(minHeap) + heappop(minHeap)
-    result += temp
-    heappush(minHeap, temp)
+    # go through the values of the heap, in each step take top (lowest) rope lengths from the min heap
+    # connect them and push the result back to the min heap.
+    # keep doing this until the heap is left with only one rope
+    result, temp = 0, 0
+    while len(minHeap) > 1:
+        temp = heappop(minHeap) + heappop(minHeap)
+        result += temp
+        heappush(minHeap, temp)
 
-  return result
+    return result
 
 
 def main():
+    print("Minimum cost to connect ropes: " + str(minimum_cost_to_connect_ropes([1, 3, 11, 5])))
+    print("Minimum cost to connect ropes: " + str(minimum_cost_to_connect_ropes([3, 4, 5, 6])))
+    print("Minimum cost to connect ropes: " + str(minimum_cost_to_connect_ropes([1, 3, 11, 5, 2])))
 
-  print("Minimum cost to connect ropes: " +
-        str(minimum_cost_to_connect_ropes([1, 3, 11, 5])))
-  print("Minimum cost to connect ropes: " +
-        str(minimum_cost_to_connect_ropes([3, 4, 5, 6])))
-  print("Minimum cost to connect ropes: " +
-        str(minimum_cost_to_connect_ropes([1, 3, 11, 5, 2])))
 
 main()
 
 
-
-
-'''
-Time complexity 
-Given 'N' ropes, we need O(N*logN)to insert all the ropes in the heap. 
-In each step, while processing the heap, we take out two elements from the heap and insert one. 
+"""
+Time complexity
+Given 'N' ropes, we need O(N*logN)to insert all the ropes in the heap.
+In each step, while processing the heap, we take out two elements from the heap and insert one.
 This means we will have a total of 'N' steps, having a total time complexity of O(N*logN).
 
 Space complexity #
 The space complexity will be O(N) because we need to store all the ropes in the heap.
-'''
+"""
