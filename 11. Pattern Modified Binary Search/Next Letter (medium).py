@@ -38,7 +38,6 @@ Explanation: As the array is assumed to be circular, the smallest letter greater
 
 # mycode
 def search_next_letter(letters, key):
-    # TODO: Write your code here
     if key < letters[0] or key >= letters[-1]:
         return letters[0]
 
@@ -91,11 +90,11 @@ main()
 
 
 """
-Time complexity 
-Since, we are reducing the search range by half at every step, 
-this means that the time complexity of our algorithm will be O(logN)O 
+Time complexity
+Since, we are reducing the search range by half at every step,
+this means that the time complexity of our algorithm will be O(logN)O
 where 'N' is the total elements in the given array.
 
-Space complexity 
+Space complexity
 The algorithm runs in constant space O(1).
 """
