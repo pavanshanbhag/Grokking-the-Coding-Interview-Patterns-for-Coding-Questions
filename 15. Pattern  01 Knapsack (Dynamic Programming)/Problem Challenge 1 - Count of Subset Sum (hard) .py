@@ -118,11 +118,11 @@ main()
 
 
 """
-Time and Space complexity 
-The above solution has the time and space complexity of O(N*S), 
+Time and Space complexity
+The above solution has the time and space complexity of O(N*S),
 where 'N' represents total numbers and 'S' is the desired sum.
 
-Challenge 
+Challenge
 Can we improve our bottom-up DP solution even further? Can you find an algorithm that has O(S) space complexity?
 """
 

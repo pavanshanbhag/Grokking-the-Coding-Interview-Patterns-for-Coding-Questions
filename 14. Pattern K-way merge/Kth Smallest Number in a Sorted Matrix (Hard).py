@@ -76,20 +76,20 @@ main()
 
 
 """
-Time complexity 
-First, we inserted at most 'K' or one element from each of the 'N' rows, which will take O(min(K, N)). 
-Then we went through at most 'K' elements in the matrix and remove/add one element in the heap in each step. 
-As we can't have more than 'N' elements in the heap in any condition, therefore, 
+Time complexity
+First, we inserted at most 'K' or one element from each of the 'N' rows, which will take O(min(K, N)).
+Then we went through at most 'K' elements in the matrix and remove/add one element in the heap in each step.
+As we can't have more than 'N' elements in the heap in any condition, therefore,
 the overall time complexity of the above algorithm will be O(min(K, N) + K*logN).
 
-Space complexity 
-The space complexity will be O(N) because, in the worst case, 
+Space complexity
+The space complexity will be O(N) because, in the worst case,
 our min-heap will be storing one number from each of the 'N' rows.
 """
 
 
 """
-An Alternate Solution 
+An Alternate Solution
 Since each row and column of the matrix is sorted, is it possible to use Binary Search to find the Kth smallest number?
 
 The biggest problem to use Binary Search, in this case, is that we don't have a straightforward sorted array, instead, we have a matrix. As we remember, in Binary Search, we calculate the middle index of the search space ('1' to 'N') and see if our required number is pointed out by the middle index; if not we either search in the lower half or the upper half. In a sorted matrix, we can't really find a middle. Even if we do consider some index as middle, it is not straightforward to find the search space containing numbers bigger or smaller than the number pointed out by the middle index.
@@ -158,9 +158,9 @@ main()
 
 
 """
-Time complexity 
+Time complexity
 The Binary Search could take O(log(max-min)) iterations where 'max' is the largest and 'min' is the smallest element in the matrix and in each iteration we take O(N)O(N) for counting, therefore, the overall time complexity of the algorithm will be O(N*log(max-min))O(N∗log(max−min)).
 
-Space complexity 
+Space complexity
 The algorithm runs in constant space O(1).
 """

@@ -156,8 +156,8 @@ main()
 
 
 """
-Time and Space complexity 
-The time complexity of the above algorithm is exponential O(2^n), where 'n' represents the total number. 
+Time and Space complexity
+The time complexity of the above algorithm is exponential O(2^n), where 'n' represents the total number.
 The space complexity is O(n), which will be used to store the recursion stack.
 """
 
@@ -209,8 +209,8 @@ main()
 
 
 """
-Time and Space complexity 
-The above algorithm has the time and space complexity of O(N*S), 
+Time and Space complexity
+The above algorithm has the time and space complexity of O(N*S),
 where 'N' represents total numbers and 'S' is the total sum of all the numbers.
 """
 
@@ -261,7 +261,7 @@ main()
 
 
 """
-Time and Space complexity 
-The above solution the has time and space complexity of O(N*S), 
+Time and Space complexity
+The above solution the has time and space complexity of O(N*S),
 where 'N' represents total numbers and 'S' is the total sum of all the numbers.
 """

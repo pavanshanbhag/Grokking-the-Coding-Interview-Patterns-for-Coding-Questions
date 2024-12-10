@@ -1,12 +1,12 @@
 '''
 Problem Statement 
-Given an array of numbers and a number ‘k’, find the median of all the ‘k’ sized sub-arrays (or windows) of the array.
+Given an array of numbers and a number 'k', find the median of all the 'k' sized sub-arrays (or windows) of the array.
 
 Example 1:
 
 Input: nums=[1, 2, -1, 3, 5], k = 2
 Output: [1.5, 0.5, 1.0, 4.0]
-Explanation: Lets consider all windows of size ‘2’:
+Explanation: Lets consider all windows of size '2':
 
 [1, 2, -1, 3, 5] -> median is 1.5
 [1, 2, -1, 3, 5] -> median is 0.5
@@ -17,7 +17,7 @@ Example 2:
 
 Input: nums=[1, 2, -1, 3, 5], k = 3
 Output: [1.0, 2.0, 3.0]
-Explanation: Lets consider all windows of size ‘3’:
+Explanation: Lets consider all windows of size '3':
 
 [1, 2, -1, 3, 5] -> median is 1.0
 [1, 2, -1, 3, 5] -> median is 2.0
@@ -27,6 +27,7 @@ Explanation: Lets consider all windows of size ‘3’:
 
 #mycode
 from heapq import *
+
 
 class SlidingWindowMedian:
 
@@ -101,8 +102,8 @@ main()
 
 
 #answer
-from heapq import *
 import heapq
+from heapq import *
 
 
 class SlidingWindowMedian:
@@ -179,12 +180,12 @@ main()
 
 
 '''
-Time complexity 
-The time complexity of our algorithm is O(N*K) where ‘N’ is the total number of elements in the input array and ‘K’ is the size of the sliding window. 
-This is due to the fact that we are going through all the ‘N’ numbers and, while doing so, we are doing two things:
-
-1. Inserting/removing numbers from heaps of size ‘K’. This will take O(logK)
-2. Removing the element going out of the sliding window. This will take O(K) as we will be searching this element in an array of size ‘K’ (i.e., a heap).
+Time complexity ''
+The time complexity of our algorithm is O(N*K) where 'N' is 'he total number of elements in the input array and 'K' is the size of the sliding window. 
+This is due to the fact that we are going through all the 'N' numbers and, while doing so, we are doing two things:
+'
+1. Inserting/removing numbers from heaps of size 'K'. This will take O(logK)'
+2. Removing the element going out of the sliding window. This will take O(K) as we will be searching this element in an array of size 'K' (i.e., a heap).
 
 Space complexity 
 Ignoring the space needed for the output array, the space complexity will be O(K) because, at any time, we will be storing all the numbers within the sliding window.

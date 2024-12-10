@@ -3,7 +3,7 @@ Problem Challenge 3
 
 Employee Free Time (hard)
 
-For ‘K’ employees, we are given a list of intervals representing the working hours of each employee. 
+For 'K' employees, we are given a list of intervals representing the working hours of each employee. 
 Our goal is to find out if there is a free interval that is common to all employees. 
 You can assume that each list of employee working hours is sorted on the start time.
 
@@ -29,6 +29,7 @@ Explanation: All employess are free between [5,7].
 
 #mycode
 from __future__ import print_function
+
 
 class Interval:
     def __init__(self, start, end):
@@ -85,6 +86,7 @@ main()
 
 #answer
 from __future__ import print_function
+
 from heapq import *
 
 
@@ -170,11 +172,11 @@ main()
 
 '''
 Time complexity 
-The time complexity of the above algorithm is O(N*logK), where ‘N’ is the total number of intervals and ‘K’ is the total number of employees. 
+The time complexity of the above algorithm is O(N*logK), where 'N' is the total number of intervals and 'K' is the total number of employees. 
 This is due to the fact that we are iterating through the intervals only once (which will take O(N), 
 and every time we process an interval, we remove (and can insert) one interval in the Min Heap, (which will take O(logK)O(logK)). 
-At any time the heap will not have more than ‘K’ elements.
+At any time the heap will not have more than 'K' elements.
 
 Space complexity 
-The space complexity of the above algorithm will be O(K) as at any time the heap will not have more than ‘K’ elements.
+The space complexity of the above algorithm will be O(K) as at any time the heap will not have more than 'K' elements.
 '''

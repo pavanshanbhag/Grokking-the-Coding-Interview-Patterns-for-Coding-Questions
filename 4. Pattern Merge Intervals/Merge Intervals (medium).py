@@ -133,7 +133,7 @@ main()
 
 """
 Time complexity 
-The time complexity of the above algorithm is O(N * logN), where ‘N’ is the total number of intervals. 
+The time complexity of the above algorithm is O(N * logN), where 'N' is the total number of intervals. 
 We are iterating the intervals only once which will take O(N), in the beginning though, 
 since we need to sort the intervals, our algorithm will take O(N * logN).
 

@@ -15,8 +15,8 @@ Explanation: The range [9, 12] includes 9 from L1, 12 from L2 and 10 from L3.
 """
 
 # mycode
-from heapq import *
 import math
+from heapq import *
 
 
 def find_smallest_range(lists):
@@ -50,8 +50,8 @@ main()
 
 
 # answer
-from heapq import *
 import math
+from heapq import *
 
 
 def find_smallest_range(lists):
@@ -88,10 +88,10 @@ main()
 
 
 """
-Time complexity 
+Time complexity
 Since, at most, we'll be going through all the elements of all the arrays and will remove/add one element in the heap in each step, t
 he time complexity of the above algorithm will be O(N*logM) where 'N' is the total number of elements in all the 'M' input arrays.
 
-Space complexity 
+Space complexity
 The space complexity will be O(M) because, at any time, our min-heap will be store one number from all the 'M' input arrays.
 """

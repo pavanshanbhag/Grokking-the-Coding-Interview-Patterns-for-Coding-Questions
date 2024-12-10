@@ -1,6 +1,6 @@
 """
 Solution Review: Problem Challenge 1 - Minimum Meeting Rooms (hard)
-Given a list of intervals representing the start and end time of ‘N’ meetings,
+Given a list of intervals representing the start and end time of 'N' meetings,
 find the minimum number of rooms required to hold all the meetings.
 
 Example 1:
@@ -124,7 +124,7 @@ main()
 
 """
 Time complexity 
-The time complexity of the above algorithm is O(N*logN), where ‘N’ is the total number of meetings. T
+The time complexity of the above algorithm is O(N*logN), where 'N' is the total number of meetings. T
 his is due to the sorting that we did in the beginning. 
 Also, while iterating the meetings we might need to poll/offer meeting to the priority queue.
 Each of these operations can take O(logN). 
@@ -132,7 +132,7 @@ Overall our algorithm will take O(NlogN).
 
 Space complexity 
 The space complexity of the above algorithm will be O(N) which is required for sorting. 
-Also, in the worst case scenario, we’ll have to insert all the meetings into the Min Heap (when all meetings overlap) which will also take O(N) space. 
+Also, in the worst case scenario, we'll have to insert all the meetings into the Min Heap (when all meetings overlap) which will also take O(N) space. 
 The overall space complexity of our algorithm is O(N).
 """
 

@@ -4,7 +4,7 @@ Palindrome LinkedList (medium)
 
 Given the head of a Singly LinkedList, write a method to check if the LinkedList is a palindrome or not.
 
-Your algorithm should use constant space and the input LinkedList should be in the original form once the algorithm is finished. The algorithm should have O(N)O(N) time complexity where ‘N’ is the number of nodes in the LinkedList.
+Your algorithm should use constant space and the input LinkedList should be in the original form once the algorithm is finished. The algorithm should have O(N)O(N) time complexity where 'N' is the number of nodes in the LinkedList.
 
 Example 1:
 
@@ -146,7 +146,7 @@ main()
 
 '''
 Time complexity 
-The above algorithm will have a time complexity of O(N) where ‘N’ is the number of nodes in the LinkedList.
+The above algorithm will have a time complexity of O(N) where 'N' is the number of nodes in the LinkedList.
 
 Space complexity 
 The algorithm runs in constant space O(1).

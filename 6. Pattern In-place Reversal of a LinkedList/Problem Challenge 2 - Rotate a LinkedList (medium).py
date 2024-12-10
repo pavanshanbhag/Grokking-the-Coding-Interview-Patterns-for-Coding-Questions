@@ -3,7 +3,7 @@ Problem Challenge 2
 
 Rotate a LinkedList (medium)
 
-Given the head of a Singly LinkedList and a number ‘k’, rotate the LinkedList to the right by ‘k’ nodes.
+Given the head of a Singly LinkedList and a number 'k', rotate the LinkedList to the right by 'k' nodes.
 '''
 
 
@@ -128,7 +128,7 @@ main()
 
 '''
 Time complexity 
-The time complexity of our algorithm will be O(N) where ‘N’ is the total number of nodes in the LinkedList.
+The time complexity of our algorithm will be O(N) where 'N' is the total number of nodes in the LinkedList.
 
 Space complexity 
 We only used constant space, therefore, the space complexity of our algorithm is O(1).

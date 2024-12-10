@@ -10,8 +10,8 @@ Input: Project Capitals=[0,1,2], Project Profits=[1,2,3], Initial Capital=1, Num
 Output: 6
 Explanation:
 
-With initial capital of ‘1’, we will start the second project which will give us profit of ‘2’. Once we selected our first project, our total capital will become 3 (profit + initial capital).
-With ‘3’ capital, we will select the third project, which will give us ‘3’ profit.
+With initial capital of '1', we will start the second project which will give us profit of '2'. Once we selected our first project, our total capital will become 3 (profit + initial capital).
+With '3' capital, we will select the third project, which will give us '3' profit.
 After the completion of the two projects, our total capital will be 6 (1+2+3).
 
 Example 2:
@@ -20,7 +20,7 @@ Input: Project Capitals=[0,1,2,3], Project Profits=[1,2,3,5], Initial Capital=0,
 Output: 8
 Explanation:
 
-With ‘0’ capital, we can only select the first project, bringing out capital to 1.
+With '0' capital, we can only select the first project, bringing out capital to 1.
 Next, we will select the second project, which will bring our capital to 3.
 Next, we will select the fourth project, giving us a profit of 5.
 After selecting the three projects, our total capital will be 8 (1+2+5).
@@ -29,6 +29,7 @@ After selecting the three projects, our total capital will be 8 (1+2+5).
 
 #mycode
 from heapq import *
+
 
 def find_maximum_capital(capital, profits, numberOfProjects, initialCapital):
   # TODO: Write your code here
@@ -109,8 +110,8 @@ main()
 '''
 Time complexity 
 Since, at the most, all the projects will be pushed to both the heaps once, 
-the time complexity of our algorithm is O(NlogN + KlogN), 
-where ‘N’ is the total number of projects and ‘K’ is the number of projects we are selecting.
+the time'complexity of our algorithm is O(NlogN ' KlogN), 
+where 'N' is the total number of projects and 'K' is the number of projects we are selecting.
 
 Space complexity 
 The space complexity will be O(N) because we will be storing all the projects in the heaps.

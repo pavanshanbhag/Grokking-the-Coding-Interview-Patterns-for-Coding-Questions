@@ -113,7 +113,7 @@ main()
 
 '''
 Time complexity 
-The time complexity of the above algorithm is O(N*logN), where ‘N’ is the total number of jobs. 
+The time complexity of the above algorithm is O(N*logN), where 'N' is the total number of jobs. 
 This is due to the sorting that we did in the beginning. 
 Also, while iterating the jobs, we might need to poll/offer jobs to the priority queue. 
 Each of these operations can take O(logN). Overall our algorithm will take O(NlogN).

@@ -129,7 +129,7 @@ main()
 
 
 """
-Time and Space complexity 
-The above solution has the time and space complexity of O(N*S), 
+Time and Space complexity
+The above solution has the time and space complexity of O(N*S),
 where 'N' represents total numbers and 'S' is the total sum of all the numbers.
 """

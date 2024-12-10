@@ -57,7 +57,7 @@ main()
 
 '''
 Time complexity 
-The above algorithm will have a time complexity of O(N) where ‘N’ is the number of nodes in the LinkedList.
+The above algorithm will have a time complexity of O(N) where 'N' is the number of nodes in the LinkedList.
 
 Space complexity 
 The algorithm runs in constant space O(1).

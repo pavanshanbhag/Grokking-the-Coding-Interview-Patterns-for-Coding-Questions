@@ -1,6 +1,6 @@
 '''
 Problem Statement 
-We are given an unsorted array containing ‘n’ numbers taken from the range 1 to ‘n’. 
+We are given an unsorted array containing 'n' numbers taken from the range 1 to 'n'. 
 The array has some duplicates, find all the duplicate numbers without using any extra space.
 
 Example 1:

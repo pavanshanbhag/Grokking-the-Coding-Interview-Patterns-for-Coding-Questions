@@ -3,7 +3,7 @@ Problem Challenge 3
 
 Find the First K Missing Positive Numbers (hard)
 
-Given an unsorted array containing numbers and a number ‘k’, find the first ‘k’ missing positive numbers in the array.
+Given an unsorted array containing numbers and a number 'k', find the first 'k' missing positive numbers in the array.
 
 Example 1:
 

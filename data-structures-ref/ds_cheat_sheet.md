@@ -157,3 +157,5 @@
 - **Insertion**: O(log n)
 - **Deletion**: O(log n)
 - **Search**: O(log n)
+
+# Search Algorithm

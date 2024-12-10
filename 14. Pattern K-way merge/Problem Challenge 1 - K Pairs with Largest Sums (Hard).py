@@ -49,6 +49,7 @@ main()
 
 # answer
 from __future__ import print_function
+
 from heapq import *
 
 
@@ -83,13 +84,13 @@ main()
 
 
 """
-Time complexity 
-Since, at most, we'll be going through all the elements of both arrays and we will add/remove one element in the heap in each step, 
+Time complexity
+Since, at most, we'll be going through all the elements of both arrays and we will add/remove one element in the heap in each step,
 the time complexity of the above algorithm will be O(N*M*logK) where 'N' and 'M' are the total number of elements in both arrays, respectively.
 
-If we assume that both arrays have at least 'K' elements then the time complexity can be simplified to O(K^2logK), 
+If we assume that both arrays have at least 'K' elements then the time complexity can be simplified to O(K^2logK),
 because we are not iterating more than 'K' elements in both arrays.
 
-Space complexity 
+Space complexity
 The space complexity will be O(K) because, at any time, our Min Heap will be storing 'K' largest pairs.
 """

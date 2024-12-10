@@ -20,7 +20,6 @@ Output: [0 0 1 2 2 2 ]
 
 # mycode
 def dutch_flag_sort(arr):
-    # TODO: Write your code here
     left, i = 0, 0
     right = len(arr) - 1
 
@@ -39,7 +38,7 @@ def dutch_flag_sort(arr):
 
 
 """
-Time complexity 
+Time complexity
 The time complexity of the above algorithm will be O(N) as we are iterating the input array only once.
 
 Space complexity #

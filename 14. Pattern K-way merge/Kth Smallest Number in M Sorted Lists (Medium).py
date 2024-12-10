@@ -78,28 +78,28 @@ main()
 
 
 """
-Time complexity 
-Since we'll be going through at most 'K' elements among all the arrays, 
-and we will remove/add one element in the heap in each step, 
+Time complexity
+Since we'll be going through at most 'K' elements among all the arrays,
+and we will remove/add one element in the heap in each step,
 the time complexity of the above algorithm will be O(K*logM) where 'M' is the total number of input arrays.
 
-Space complexity 
-The space complexity will be O(M) because, at any time, 
+Space complexity
+The space complexity will be O(M) because, at any time,
 our min-heap will be storing one number from all the 'M' input arrays.
 """
 
 
 """
-Similar Problems 
+Similar Problems
 Problem 1: Given 'M' sorted arrays, find the median number among all arrays.
 
-Solution: This problem is similar to our parent problem with K=Median. 
+Solution: This problem is similar to our parent problem with K=Median.
 So if there are 'N' total numbers in all the arrays we need to find the K'th minimum number where K=N/2K.
 
 Problem 2: Given a list of 'K' sorted arrays, merge them into one sorted list.
 
-Solution: This problem is similar to Merge K Sorted Lists except that 
-the input is a list of arrays compared to LinkedLists. 
-To handle this, we can use a similar approach as discussed in our parent problem 
+Solution: This problem is similar to Merge K Sorted Lists except that
+the input is a list of arrays compared to LinkedLists.
+To handle this, we can use a similar approach as discussed in our parent problem
 by keeping a track of the array and the element indices.
 """

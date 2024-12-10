@@ -173,6 +173,6 @@ pyrightconfig.json
 .vscode/
 
 # Project Specific
-cip-dev/
-developer-practice/ 
-interview/
+# cip-dev/
+# developer-practice/
+# interview/

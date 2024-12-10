@@ -16,6 +16,7 @@ Output: [1, 5, 7, 8, 9]
 # mycode
 
 from __future__ import print_function
+
 from heapq import *
 
 
@@ -73,6 +74,7 @@ main()
 
 # answer
 from __future__ import print_function
+
 from heapq import *
 
 
@@ -135,10 +137,10 @@ main()
 
 
 """
-Time complexity 
-Since we'll be going through all the elements of all arrays and will be removing/adding one element to the heap in each step, 
+Time complexity
+Since we'll be going through all the elements of all arrays and will be removing/adding one element to the heap in each step,
 the time complexity of the above algorithm will be O(N*logK), where 'N' is the total number of elements in all the 'K' input arrays.
 
-Space complexity 
+Space complexity
 The space complexity will be O(K) because, at any time, our min-heap will be storing one number from all the 'K' input arrays.
 """
